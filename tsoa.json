@@ -1,0 +1,26 @@
+{
+  "entryFile": "src/server.ts",
+  "noImplicitAdditionalProperties": "silently-remove-extras",
+  "controllerPathGlobs": [
+    "src/controllers/**/*Controller.ts"
+  ],
+  "spec": {
+    "outputDirectory": "src",
+    "specVersion": 3,
+    "basePath": "/api",
+    "schemes": ["http", "https"],
+    "securityDefinitions": {
+      "anonymous": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "authorization"
+      }
+    }
+  },
+  "routes": {
+    "routesDir": "src",
+    "middleware": "express",
+    "basePath": "/api",
+    "authenticationModule": "src/authentication.ts"
+  }
+}
