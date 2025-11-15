@@ -1,9 +1,7 @@
 {
   "entryFile": "src/server.ts",
   "noImplicitAdditionalProperties": "silently-remove-extras",
-  "controllerPathGlobs": [
-    "src/controllers/**/*Controller.ts"
-  ],
+  "controllerPathGlobs": ["src/controllers/**/*Controller.ts"],
   "spec": {
     "outputDirectory": "src",
     "specVersion": 3,

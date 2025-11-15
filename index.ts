@@ -1,2 +1,2 @@
 // Entry point: start the server
-import "./src/server.ts";
+import './src/server.ts';

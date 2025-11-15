@@ -1,6 +1,10 @@
-import { randomUUID } from "node:crypto";
-import type { CreateUserRequest, UpdateUserRequest, User } from "../models/User";
-import { UserRepository } from "../repositories/UserRepository";
+import { randomUUID } from 'node:crypto';
+import type {
+  CreateUserRequest,
+  UpdateUserRequest,
+  User,
+} from '../models/User';
+import { UserRepository } from '../repositories/UserRepository';
 
 export class UserService {
   private userRepository: UserRepository;
@@ -12,7 +16,7 @@ export class UserService {
   public async create(data: CreateUserRequest): Promise<User> {
     try {
       if (!data?.name || !data?.email) {
-        throw new Error("Name and email are required");
+        throw new Error('Name and email are required');
       }
 
       const now = new Date();
@@ -47,15 +51,24 @@ export class UserService {
     }
   }
 
-  public async update(id: string, updateData: UpdateUserRequest): Promise<User | undefined> {
+  public async update(
+    id: string,
+    updateData: UpdateUserRequest,
+  ): Promise<User | undefined> {
     try {
-      if (updateData && (updateData.name === undefined || updateData.email === undefined)) {
+      if (
+        updateData &&
+        (updateData.name === undefined || updateData.email === undefined)
+      ) {
         // Keep the example's required check for both fields
-        throw new Error("Name and email are required");
+        throw new Error('Name and email are required');
       }
       const existing = await this.userRepository.findById(id);
       if (!existing) return undefined;
-      return await this.userRepository.update(id, { ...updateData, updatedAt: new Date() });
+      return await this.userRepository.update(id, {
+        ...updateData,
+        updatedAt: new Date(),
+      });
     } catch (error) {
       throw error;
     }

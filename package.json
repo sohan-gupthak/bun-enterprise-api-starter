@@ -9,7 +9,9 @@
     "spec": "bunx tsoa spec",
     "routes": "bunx tsoa routes",
     "gen": "bun run spec; bun run routes",
-    "build": "echo Build step not required with Bun runtime; exit 0"
+    "build": "echo Build step not required with Bun runtime; exit 0",
+    "format": "bunx prettier . --write",
+    "format:check": "bunx prettier . --check"
   },
   "devDependencies": {
     "@types/bun": "latest",

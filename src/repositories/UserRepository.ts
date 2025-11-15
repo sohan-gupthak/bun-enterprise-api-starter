@@ -1,4 +1,4 @@
-import type { User } from "../models/User";
+import type { User } from '../models/User';
 
 // Simple in-memory repository for demonstration. Replace with DB integration later.
 export class UserRepository {
@@ -17,7 +17,10 @@ export class UserRepository {
     return this.users.get(id);
   }
 
-  async update(id: string, updateData: Partial<User>): Promise<User | undefined> {
+  async update(
+    id: string,
+    updateData: Partial<User>,
+  ): Promise<User | undefined> {
     const existing = this.users.get(id);
     if (!existing) return undefined;
     const updated: User = { ...existing, ...updateData };
