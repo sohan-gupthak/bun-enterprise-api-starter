@@ -3,7 +3,7 @@
   "noImplicitAdditionalProperties": "silently-remove-extras",
   "controllerPathGlobs": ["src/controllers/**/*Controller.ts"],
   "spec": {
-    "outputDirectory": "src",
+    "outputDirectory": "src/generated",
     "specVersion": 3,
     "basePath": "/api",
     "schemes": ["http", "https"],
@@ -16,7 +16,7 @@
     }
   },
   "routes": {
-    "routesDir": "src",
+    "routesDir": "src/generated",
     "middleware": "express",
     "basePath": "/api",
     "authenticationModule": "src/authentication.ts"
